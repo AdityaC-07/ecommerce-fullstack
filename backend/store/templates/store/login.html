@@ -1,0 +1,21 @@
+{% extends "store/base.html" %}
+{% block title %}Login{% endblock %}
+{% block content %}
+<div class="auth-container">
+    <h2>Login</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Username" required><br>
+        <input type="password" name="password" placeholder="Password" required><br>
+        <button type="submit">Login</button>
+    </form>
+
+    <div class="role-info">
+        <p>🔑 <strong>Admin Login:</strong> For store managers to add or manage products.</p>
+        <p>🛍️ <strong>Customer Login:</strong> For browsing and shopping products.</p>
+    </div>
+
+    <p>Don’t have an account? <a href="{% url 'signup' %}">Sign up</a></p>
+</div>
+{% endblock %}

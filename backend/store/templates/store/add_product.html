@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Product</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f7f7f7;
+            color: #222;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 500px;
+            margin: 70px auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            padding: 36px 28px;
+            text-align: center;
+        }
+        h2 {
+            font-size: 1.7rem;
+            margin-bottom: 18px;
+            letter-spacing: 1px;
+        }
+        .divider {
+            width: 50px;
+            height: 3px;
+            background: #0078d7;
+            margin: 0 auto 22px auto;
+            border-radius: 2px;
+        }
+        form {
+            margin-bottom: 18px;
+        }
+        button[type="submit"] {
+            background: #0078d7;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 10px 22px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button[type="submit"]:hover {
+            background: #005fa3;
+        }
+        .error-box {
+            color: #d8000c;
+            background: #ffeaea;
+            border-radius: 6px;
+            padding: 10px;
+            margin-bottom: 16px;
+        }
+        .back-link {
+            display: inline-block;
+            color: #0078d7;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 18px;
+            border-radius: 6px;
+            background: #eaf4ff;
+            transition: background 0.2s, color 0.2s;
+            margin-top: 10px;
+        }
+        .back-link:hover {
+            background: #d0e7ff;
+            color: #005fa3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Add New Product</h2>
+        <div class="divider"></div>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Save Product</button>
+        </form>
+        {% if form.errors %}
+            <div class="error-box">
+                <h4>Errors:</h4>
+                {{ form.errors }}
+            </div>
+        {% endif %}
+        <a class="back-link" href="{% url 'product-list' %}">⬅ Back to Product List</a>
+    </div>
+</body>
+</html>

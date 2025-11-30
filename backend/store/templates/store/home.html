@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home | E-Commerce App</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f7f7f7;
+            color: #222;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 500px;
+            margin: 70px auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            padding: 36px 28px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 16px;
+            letter-spacing: 1px;
+        }
+        .divider {
+            width: 50px;
+            height: 3px;
+            background: #0078d7;
+            margin: 0 auto 22px auto;
+            border-radius: 2px;
+        }
+        p {
+            font-size: 1.05rem;
+            margin-bottom: 18px;
+            line-height: 1.5;
+        }
+        .nav-links a {
+            color: #0078d7;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover {
+            color: #005fa3;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>{{ message }}</h1>
+        <div class="divider"></div>
+        <p>Welcome to the Home Page of E-Commerce App</p>
+        <div class="nav-links">
+            <a href="{% url 'product-list' %}">View Products</a>
+            <a href="{% url 'add-product' %}">Add Product</a>
+        </div>
+    </div>

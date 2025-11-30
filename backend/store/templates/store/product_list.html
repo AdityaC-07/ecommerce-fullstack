@@ -1,0 +1,144 @@
+{% extends "store/base.html" %}
+{% load static %}
+{% block title %}Products{% endblock %}
+
+{% block content %}
+<style>
+    /* ====== Page Background ====== */
+    body {
+        background: url("{% static 'store/images/bg.jpg' %}") no-repeat center center fixed;
+        background-size: cover;
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* ====== Page Title ====== */
+    h2 {
+        text-align: center;
+        color: #ffffff;
+        margin: 30px 0 10px;
+        font-size: 32px;
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+    }
+
+    /* ====== Product Grid ====== */
+    .products-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 25px;
+        padding: 30px 50px;
+    }
+
+    /* ====== Product Card ====== */
+    .product-card {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 15px;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        padding: 15px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    .product-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 12px;
+        margin-bottom: 10px;
+    }
+
+    .product-card h5 {
+        font-size: 18px;
+        margin: 5px 0;
+        color: #222;
+    }
+
+    .price {
+        color: #b12704;
+        font-weight: bold;
+        font-size: 17px;
+        margin: 5px 0;
+    }
+
+    .stock {
+        font-size: 14px;
+        color: #555;
+        margin-bottom: 10px;
+    }
+
+    /* ====== Add to Cart Button ====== */
+    .btn-cart {
+        background-color: #ffd814;
+        border: 1px solid #fcd200;
+        color: #111;
+        padding: 8px 14px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: all 0.3s ease;
+    }
+
+    .btn-cart:hover {
+        background-color: #f7ca00;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    /* ====== Add Product Link for Admin ====== */
+    .add-link {
+        display: block;
+        width: fit-content;
+        margin: 25px auto;
+        background: #ff9900;
+        color: white;
+        padding: 10px 18px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .add-link:hover {
+        background: #e68a00;
+        transform: translateY(-2px);
+    }
+
+    /* ====== No Products Text ====== */
+    p {
+        text-align: center;
+        color: #fff;
+        font-size: 18px;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    }
+</style>
+
+<h2>All Products</h2>
+
+<div class="products-grid">
+  {% for product in products %}
+  <div class="product-card">
+    {% if product.image %}
+      <img src="{{ product.image.url }}" alt="{{ product.name }}">
+    {% else %}
+      <img src="{% static 'store/images/sample-product.jpg' %}" alt="sample">
+    {% endif %}
+    <h5>{{ product.name }}</h5>
+    <div class="price">₹{{ product.price }}</div>
+    <div class="stock">Stock: {{ product.stock }}</div>
+    <button class="btn-cart">Add to Cart</button>
+  </div>
+  {% empty %}
+  <p>No products available.</p>
+  {% endfor %}
+</div>
+
+{% if user.is_staff %}
+  <a class="add-link" href="{% url 'add-product' %}">➕ Add New Product</a>
+{% endif %}
+
+{% endblock %}
