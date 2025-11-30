@@ -8,7 +8,9 @@
 [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
 [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![SQLite](https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white)](https://www.sqlite.org/)
+
+**A powerful ecommerce solution built with Django REST Framework & React**
 
 **A powerful ecommerce solution built with Django REST Framework & React**
 
@@ -48,6 +50,7 @@ Elysian Market is a full-featured ecommerce platform designed for modern online 
 - ✅ Admin Dashboard
 - ✅ Search & Filter Products
 - ✅ Image Upload & Management
+-✅ SQLite Database (Easy Setup)
 
 </td>
 <td width="50%">
@@ -114,7 +117,7 @@ Before you begin, ensure you have the following installed:
 
 - ![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=flat-square&logo=python&logoColor=white)
 - ![Node.js](https://img.shields.io/badge/Node.js-14+-339933?style=flat-square&logo=node.js&logoColor=white)
-- ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Optional-316192?style=flat-square&logo=postgresql&logoColor=white)
+- ![SQLite](https://img.shields.io/badge/SQLite-Included-07405E?style=flat-square&logo=sqlite&logoColor=white) (Built-in with Python)
 
 ### 🔙 Backend Setup
 ```bash
@@ -271,22 +274,6 @@ const API_BASE_URL = "http://localhost:8000";
 
 ---
 
-## 🎨 Screenshots
-
-<div align="center">
-
-### 🏠 Home Page
-![Home Page](https://via.placeholder.com/800x400/4A90E2/FFFFFF?text=Home+Page+Screenshot)
-
-### 🛍️ Product Catalog
-![Products](https://via.placeholder.com/800x400/50C878/FFFFFF?text=Product+Catalog+Screenshot)
-
-### 🛒 Shopping Cart
-![Cart](https://via.placeholder.com/800x400/FF6B6B/FFFFFF?text=Shopping+Cart+Screenshot)
-
-</div>
-
----
 
 ## 🚀 Deployment
 
