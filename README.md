@@ -12,8 +12,6 @@
 
 **A powerful ecommerce solution built with Django REST Framework & React**
 
-**A powerful ecommerce solution built with Django REST Framework & React**
-
 [🚀 Features](#-features) • [📦 Installation](#-installation--setup) • [🎯 API](#-api-endpoints) • [🤝 Contributing](#-contributing)
 
 ---
